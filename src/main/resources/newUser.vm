@@ -1,0 +1,74 @@
+<html>
+<style>
+    body {
+        background-color: #eee;
+        font-family: sans-serif;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    .card.center {
+        margin: auto;
+        width: 30%;
+        margin-top: 12%;
+        background-color: #fff;
+        padding: 1px 18px 15px 18px;
+        box-shadow: 1px 3px 5px 1px #c4c4c4;
+        border-top: 3px solid #0074db;
+        border-radius: 4px;
+    }
+
+    h5.card-title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    a.btn.btn-primary.color {
+        color: #3f3f3f;
+        background-color: whitesmoke;
+        font-weight: 600;
+        font-size: 25px;
+        border-radius: 5px;
+        margin: 25%;
+        padding: 15px;
+        text-align: center !important;
+    }
+
+    p.regards {
+        padding-bottom: 0px;
+        margin-bottom: 6px;
+        margin-top: 0px;
+    }
+
+    p.team {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .link_expire {
+        font-size: 10px;
+        margin: auto;
+        width: 30%;
+        margin-top: 12px;
+    }
+</style>
+
+<body>
+    <div class='card center'>
+        <div class='card-body'>
+            <h5 class="card-title">Welcome to OGITasks!</h5>
+            Hello ${email} <br> <br> To get
+            started, copy or type the code below into your browser:
+            <br><br><br>
+            <a class='btn btn-primary color'>${password}</a><br> <br> <br>
+            <p class="regards">Warm Regards</p>
+            <p class="team">Team OGITasks</p>
+        </div>
+    </div>
+    <p class="link_expire">
+        <b>Note</b>
+        : for your safety, the code will expire in 10 minutes.
+    </p>
+</body>
+
+</html>
