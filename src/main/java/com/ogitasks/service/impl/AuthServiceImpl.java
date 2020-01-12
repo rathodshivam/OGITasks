@@ -46,7 +46,7 @@ public class AuthServiceImpl implements AuthService {
 			}
 
 		} else if (AppUtility.isEmpty(user)) {
-			throw new GenricException("User not found");
+			throw new GenricException("Email not Registered.");
 		}
 		String pass = removeLastCharRegexOptional(createPassword());
 		user.setPassword(encoder.encode(pass));

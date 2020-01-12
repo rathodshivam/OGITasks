@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
 
 @Component("MailUtility")
@@ -23,8 +24,8 @@ public class MailUtility {
 	@Value("${spring.mail.username}")
 	String username;
 
-//	@Autowired
-//	ThreadPoolTaskExecutor threadPoolTaskExecutor;
+	@Autowired
+	ThreadPoolTaskExecutor threadPoolTaskExecutor;
 
 	@Autowired
 	JavaMailSender javaMailSender;
@@ -45,6 +46,7 @@ public class MailUtility {
 	}
 
 	public void send(final String email, final String subject, String templateName, Map<String, Object> params) {
+		threadPoolTaskExecutor.execute(() -> {
 			MimeMessage mime = javaMailSender.createMimeMessage();
 			MimeMessageHelper helper;
 			try {
@@ -57,5 +59,6 @@ public class MailUtility {
 			} catch (MessagingException e) {
 				e.printStackTrace();
 			}
+		});
 	}
 }

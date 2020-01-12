@@ -9,7 +9,7 @@
 
     .card.center {
         margin: auto;
-        width: 30%;
+        width: fit-content;
         margin-top: 12%;
         background-color: #fff;
         padding: 1px 18px 15px 18px;

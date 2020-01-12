@@ -33,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	public void globalUserDetails(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
-		System.out.println(userDetailsService.toString() + auth.toString());
 	}
 
 	@Override
@@ -58,5 +57,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 		return velocityEngine;
 	}
-
 }
