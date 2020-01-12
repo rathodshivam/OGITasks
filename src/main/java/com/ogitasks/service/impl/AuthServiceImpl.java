@@ -15,7 +15,7 @@ import com.mifmif.common.regex.Generex;
 import com.ogitasks.constants.AppConstants;
 import com.ogitasks.document.AuthType;
 import com.ogitasks.document.User;
-import com.ogitasks.exception.UserRequestException;
+import com.ogitasks.exception.GenricException;
 import com.ogitasks.repository.UserRepository;
 import com.ogitasks.service.AuthService;
 import com.ogitasks.utility.AppUtility;
@@ -46,7 +46,7 @@ public class AuthServiceImpl implements AuthService {
 			}
 
 		} else if (AppUtility.isEmpty(user)) {
-			throw new UserRequestException("User not found");
+			throw new GenricException("User not found");
 		}
 		String pass = removeLastCharRegexOptional(createPassword());
 		user.setPassword(encoder.encode(pass));
